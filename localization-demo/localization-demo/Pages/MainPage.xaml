@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="localization_demo.Pages.MainPage"
+             xmlns:res="clr-namespace:localization_demo.Resources.Strings"> <!-- here we declare the namespace that contains the strings -->
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30">
+
+            <Label 
+                Text="{x:Static res:AppResource.Hello_World}"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="{x:Static res:AppResource.Welcome}"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="{x:Static res:AppResource.Welcome_Desc}"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text=""
+                FontSize="18"
+                FontAttributes="Bold"
+                x:Name="CounterLabel"
+                HorizontalOptions="Center" />
+
+            <Button 
+                Text="{x:Static res:AppResource.Click_me}"
+                FontAttributes="Bold"
+                SemanticProperties.Hint="{x:Static res:AppResource.Click_me_Hint}"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="{x:Static res:AppResource.dotnet_bot_png_Desc}"
+                WidthRequest="250"
+                HeightRequest="310"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
